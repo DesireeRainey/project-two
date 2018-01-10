@@ -11,7 +11,7 @@ module.exports = {
       usersId: {
         type: Sequelize.INTEGER
       },
-      restaurantName: {
+      favoritedRestaurant: {
         type: Sequelize.STRING
       },
       content: {
