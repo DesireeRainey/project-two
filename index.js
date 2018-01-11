@@ -24,6 +24,7 @@ app.use(function(req,res,next){
 	res.locals.alerts = req.flash();
 	next();
 });
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
 	res.render('home');
@@ -33,10 +34,22 @@ app.get('/profile', isLoggedIn, function(req, res){
 	res.render('profile');
 });
 
-app.get('/search', function(req, res){
-	res.render('search');
+app.get('/places', function(req, res){
+	res.render('places');
 });
 
 app.use('/auth', require('./controllers/auth'));
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(process.env.PORT || 3000);
