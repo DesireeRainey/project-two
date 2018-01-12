@@ -3,17 +3,17 @@ var map;
 var infowindow;
 
 function initMap() {
-  var pyrmont = {lat: -33.867, lng: 151.195};
+  var seattle = {lat: 47.61, lng: -122.3321};
 
   map = new google.maps.Map(document.getElementById('map'), {
-    center: pyrmont,
+    center: seattle,
     zoom: 15
   });
 
   infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
-    location: pyrmont,
+    location: seattle,
     radius: 500,
     type: ['store']
   }, callback);
