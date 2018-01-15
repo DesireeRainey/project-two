@@ -1,13 +1,32 @@
 body{
-	background: #A92C23;
+	background: #3D3D3D;
+  font-family: 'Joti One', cursive;
+  color: white;
 }
-
 
 #map{
 	height: 500px;
 }
+ 
+.home-burger{
+  text-align: center;
+}
+
+.box-one{
+  margin: 50px 0px;
+}
+
+.burger-outline{
+    content: url("burger-outline-filled.png");
+}
+
+.box-two{
+  margin: 50px 200px;
+  font-size: 25px;
+}
 
 
+/*
 #description {
   font-family: Roboto;
   font-size: 15px;
@@ -77,4 +96,4 @@ body{
 }
 #target {
   width: 345px;
-}
+}*/

@@ -1,1 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div class="home-burger">
 <h2>CHEESEBURGER HOME BASE</h2>
+<!-- make form here and include the script file for --> 
+<!-- <form name="search" action="/places" method="post">
+	<input type="text" placeholder="Where are you searching?">
+	<input type="submit" value="Submit">
+</form> -->
+<div class="box-one">
+<img class="burger-outline" alt="Cheeseburger-outline">
+</div>
+<div class="box-two">
+	<p>
+	Cheeseburger lovers rejoice! Here is a place where you savor and save all of the data you've gathered regarding Restaurants serving the best cheeseburgers that google has to offer! <br> Click below to see Cheeseburgers in Seattle, WA.
+	</p>
+</div>
+<form method="POST" action="/places" href="/places">
+    <input hidden type="text" name="title" value="<%=  %>">
+    <button class="btn btn-danger" type="submit">Cheeseburgers?</button>
+ </form>
+</div>
+<script src="/js/searchreq.js"></script>
+</body>
+</html>
