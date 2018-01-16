@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var flash = require('connect-flash');
+var request = require("request");
 var isLoggedIn = require('./middleware/isLoggedIn');
 var passport = require('./config/passportConfig');
 var session = require('express-session');
@@ -26,6 +27,9 @@ app.use(function(req,res,next){
 });
 app.use(express.static(__dirname + '/public'));
 
+app.use('/auth', require('./controllers/auth'));
+app.use('/places', require('./controllers/place'));
+
 app.get('/', function(req, res){
 	res.render('home');
 });
@@ -33,21 +37,6 @@ app.get('/', function(req, res){
 app.get('/profile', isLoggedIn, function(req, res){
 	res.render('profile');
 });
-
-app.get('/places', function(req, res){
-	res.render('places');
-});
-
-app.use('/auth', require('./controllers/auth'));
-
-
-
-
-
-
-
-
-
 
 
 

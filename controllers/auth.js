@@ -15,7 +15,6 @@ router.post('/login', passport.authenticate('local', {
 	failureRedirect: 'Invalid Credentials'
 }));
 	
-
 router.get('/signup', function(req, res){
 	res.render('auth/signup');
 });
