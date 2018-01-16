@@ -3,13 +3,27 @@
 
 <div class="profile">
 	<h3>Here are your saved favorites</h3>
+<h2 class="text-center">New Post</h2>
 
+<form method="post" action="/profiles">
+	<div class="form-group">
+		<label for="title">Restaurant Name:</label>
+		<input type="text" name="title" placeholder="Restaurant Name" class="form-control" requried>
+	</div>
+	<div class="form-group">
+		<div class="form-group">
+		<label for="comment">Comment:</label>
+		<textarea name="comment" class="form-control"></textarea>
+	</div>
+	<input type="submit" value="Create Comment" class="btn btn-warning">
+</form>
+<div class="render-comments">
 
-
-<a href="/places" class="btn btn-danger delete-link">Delete Post</a>
 </div>
 
+</div>
 
+<a href="/profile" class="btn btn-danger delete-link">Delete Post</a>
 </body>
 
 

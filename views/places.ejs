@@ -5,14 +5,27 @@
 </head>
 <body>
 <div class="places-search">
-	<h1>Search for Cheeseburgers</h1> 
+	<h1>Cheeseburger Results:</h1> 
+    <img class="burger-outline" alt="Cheeseburger-outline">
 
+
+<div class="results">   
 <% if (businesses) { %>
 	<% for (var item of businesses) { %>
-		<div class="col"><h2>Restaurant Name:<%= item.name %></h2></div>
-
+	<br>
+		<div class="col text-primary"><h2>Restaurant Name:<%= item.name %></h2></div>
+        <div class= "col text-primary"><h3>Yelp Rating: <%= item.rating %></h3></div>
+        <div class= "col text-primary"><h3>Address: <%= item.location.address1 %></h3></div>
+        <div class= "col text-success"><h3>Price: <%= item.price %></h3></div>
+        <img class="images " src="<%= item.image_url%>">
+        <br>
+        <a href="/profile" class= "col-sm btn btn-warning btn-lng">
+          Save Comment
+        </a>
 	<% }; %>
  <% }; %>
+</div>
+
 
 
 
