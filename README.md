@@ -7,7 +7,7 @@ CSS
 Javascript
 Node.JS 
 Bootstrap
-Yelp API
+Yelp Fusion API
 
 You can find this side deployed on [Heroku](https://seattle-cheeseburgers.herokuapp.com/).
 
