@@ -1,29 +1,17 @@
 # Project Two the Seattle Cheeseburger Finder
+The Seattle Cheeseburger Finder pulls restaurant data from the Yelp API and allows you to save personal comments in a user profile. Use it to catalog good and bad burgers or save places you would like to check out for a later date. 
 
+## This app was made with: 
+HTML
+CSS
+Javascript
+Node.JS 
+Bootstrap
+Yelp API
+
+You can find this side deployed on [Heroku](https://seattle-cheeseburgers.herokuapp.com/).
+
+## Pages:
 ![Alt text](/public/css/home.png?raw=true "Home Page")
-
-This app was made with Node.JS, Bootstrap and the Yelp API for Restaurant Data. 
-
-Packages used include:
-async
-bcrypt
-body-parser
-connect-flash
-dotenv
-ejs
-express
-express-ejs-layouts
-express-session
-passport
-passport-local
-pg
-pg-hstore
-request
-router
-sequeliz
-sequelize-cli
-yelp-fusion
-
-You can find this site deployed on Heroku here: https://seattle-cheeseburgers.herokuapp.com/
 
 ![Alt text](/public/css/dicks.png?raw=true "Dick's")
