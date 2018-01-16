@@ -9,8 +9,12 @@ body {
 	color: black;
 }
 
-.results{
+.results {
    border-style: 5px solid black;
+}
+
+.button-create {
+  margin-top: 25px;
 }
 
 .images {

@@ -5,3 +5,5 @@
 This app was made with Node.JS and the Yelp API for Restaurant Data. 
 
 You can find this site deployed on Heroku here: https://seattle-cheeseburgers.herokuapp.com/
+
+![Alt text](/public/css/dicks.png?raw=true "Dick's")
