@@ -31,23 +31,14 @@ app.use('/auth', require('./controllers/auth'));
 app.use('/places', require('./controllers/place'));
 app.use('/profiles', require('./controllers/profiles'));
 
-// app.get('/', function(req, res){
-// 	db.profile.findAll({
-// 		where: {userId:res.locals.currentUser.dataValues.id},
-// 		include: [db.users]
-// 	}).then(function(profiles){
-// 		res.render('profile', {results: profiles})
-// 	})
-// });
 
 app.get('/', function(req, res){
 	res.render('home');
 });
 
-app.get('/profile', isLoggedIn, function(req, res){
+app.get('/profiles', isLoggedIn, function(req, res){
 	res.render('profile');
 });
-
 
 
 
