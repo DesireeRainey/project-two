@@ -8,14 +8,39 @@ var isLoggedIn = require('../middleware/isLoggedIn');
 var db = require('../models');
 
 router.get('/', isLoggedIn, function(req, res){
-	db.profile.findOne({
-		where: {id: req.user.id},
-		include: [db.users]
+	db.profile.findAll({
+		where: {userId: req.user.id},
+		include: [db.user]
 	}).then(function(profiles){
-		res.render('profiles', {results: profiles})
+		res.render('profile', {results: profiles})
 	})
 });
 
+router.get('/edit/:id', isLoggedIn, function(req, res){
+	db.profile.findOne({
+		where: {
+			id: req.params.id,
+			userId: req.user.id
+		},
+		include: [db.user]
+	}).then(function(profile){
+		res.render('profile', {results: profile})
+	})
+});
+
+router.put('/edit/:id', isLoggedIn, function(req,res){
+	db.profile.findOne({
+		where: {id: req.body.id}
+	}).then(function(profile){
+		profile.restaurant = req.body.restaurant;
+		profile.comment = req.body.comment;
+		profile.save();
+	}).then(function(updatedProfile){
+		res.send('Profile is updated');
+	}).catch(function(err){
+		res.send(err);
+	});
+});
 
 router.post('/', function(req, res){
 	console.log(req.body);
@@ -24,22 +49,25 @@ router.post('/', function(req, res){
 		comment: req.body.comment,
 		userId: req.user.id
 	}).then(function(createdComment){
-		res.redirect('/profiles')
+		res.redirect('/profile')
 	}).catch(function(err){
 		console.log(err)
 	});
 });
 
+
 router.delete('/:id', function(req,res){
 	console.log('Delete route. ID = ', req.params.id);
-	db.comment.destroy({
+	db.profile.findOne({
+		where: { id: req.params.id }
+	}).then(function(profile){
+		db.profile.destroy({
 		where: {
-			//???? Get the id from the users table?  
 			id: req.params.id
 		}
 	}).then(function(deleted){
-		console.log('deleted = ', deleted);
-		res.send('success');
+		res.send('success')
+	});
 	}).catch(function(err){
 		console.log('ERROR', err);
 		res.send('Failed')

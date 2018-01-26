@@ -25,18 +25,18 @@ app.use(function(req,res,next){
 	res.locals.alerts = req.flash();
 	next();
 });
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/'));
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/places', require('./controllers/place'));
-app.use('/profiles', require('./controllers/profiles'));
+app.use('/profile', require('./controllers/profile'));
 
 
 app.get('/', function(req, res){
 	res.render('home');
 });
 
-app.get('/profiles', isLoggedIn, function(req, res){
+app.get('/profile', isLoggedIn, function(req, res){
 	res.render('profile');
 });
 

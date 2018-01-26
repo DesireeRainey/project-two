@@ -1,4 +1,3 @@
-<body>
 <h2>THIS IS YOUR CHEESEBURGER PROFILE</h2>
 
 <div class="profile">
@@ -20,12 +19,17 @@
 </form>
 </div>
 <div>
-
-
+<% if(results) { %>
+<% results.forEach(function(profile){ %>
+	<h2><%= profile.restaurant %> </h2>
+	<p><%= profile.comment %> </p>
+	<a class="btn btn-warning" href="/profile/edit/<%= profile.id %>">Edit</a>
+	<a class="btn btn-warning delete-link" href="/profile/<%= profile.id %>">Delete</a>
+<% }); %>
+<% } else { %>
+	<h2>Use the form above to comment on Cheeseburgers!</h2>
+<% }; %>
 </div>
 
-
-<!-- <a href="/profile" class="btn btn-danger delete-link">Delete Post</a>
- --></body>
 
 
