@@ -12,7 +12,7 @@ router.get('/', isLoggedIn, function(req, res){
 		where: {userId: req.user.id},
 		include: [db.user]
 	}).then(function(profiles){
-		res.render('profile', {results: profiles})
+		res.render('profile', {results: profiles, restaurant: req.query.restaurant})
 	})
 });
 
@@ -24,7 +24,7 @@ router.get('/edit/:id', isLoggedIn, function(req, res){
 		},
 		include: [db.user]
 	}).then(function(profile){
-		res.render('profile', {results: profile})
+		res.render('edit', {profile: profile})
 	})
 });
 

@@ -1,8 +1,8 @@
 <h2><%= profile.restaurant %> -- Edit</h2>
-<form class="edit-form" method="put" action=""/profile/edit/<%= profile.id %>">
+<form class="edit-profile" method="put" action="/profile/edit/<%= profile.id %>">
 	<div class="form-group">
 		<label for="title">Restaurant Name:</label>
-		<input type="text" name="title" placeholder="Restaurant Name" class="form-control" requried>
+		<input type="text" name="restaurant" placeholder="Restaurant Name" class="form-control" value="<%=profile.restaurant%>" requried>
 	</div>
 	<div class="form-group">
 		<div class="form-group">

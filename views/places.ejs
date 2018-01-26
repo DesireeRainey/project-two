@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<script src="//code.jquery.com/jquery.js"></script>
-</head>
-<body>
 <div class="places-search">
 	<h1>Cheeseburger Results:</h1> 
     <img class="burger-outline" alt="Cheeseburger-outline">
@@ -19,14 +13,9 @@
         <div class= "col text-success"><h3>Price: <%= item.price %></h3></div>
         <img class="images " src="<%= item.image_url%>">
         <br>
-        <a href="/profiles" class= "button-create col-sm btn btn-warning btn-lng">
+        <a href="/profile?restaurant=<%=item.name%>" class= "button-create col-sm btn btn-warning btn-lng">
           Save Comment
         </a>
 	<% }; %>
  <% }; %>
 </div>
-
-<script src="/js/searchreq.js"></script>
-<script src="/js/script.js"></script>
-</body>
-</html>

@@ -10,7 +10,7 @@ $('.delete-link').click(function(e){
 	});
 });
 
-$('.edit-profile').click(function(e){
+$('.edit-profile').submit(function(e){
 		e.preventDefault();
 		$.ajax({
 			url: $(this).attr('action'),
